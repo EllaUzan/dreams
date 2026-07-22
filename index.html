@@ -310,13 +310,26 @@
 <script>
   const chips = [...document.querySelectorAll('.chip')];
   const chapters = [...document.querySelectorAll('.chapter')];
+  const playVisible = root => root.querySelectorAll('video').forEach(v => {
+    v.muted = true;
+    const p = v.play(); if (p) p.catch(() => {});
+  });
   const activate = t => {
     chips.forEach(c => c.classList.toggle('active', c.dataset.t === t));
     chapters.forEach(s => s.classList.toggle('active', s.id === t));
     window.scrollTo({ top: 0, behavior: 'smooth' });
+    playVisible(document.getElementById(t));
   };
   document.querySelectorAll('.chip, .next-btn').forEach(b =>
     b.addEventListener('click', () => activate(b.dataset.t)));
+
+  const vio = new IntersectionObserver(entries => entries.forEach(e => {
+    const v = e.target;
+    if (e.isIntersecting) { v.muted = true; const p = v.play(); if (p) p.catch(() => {}); }
+    else v.pause();
+  }), { rootMargin: '100px' });
+  document.querySelectorAll('video').forEach(v => vio.observe(v));
+  playVisible(document.querySelector('.chapter.active'));
 
   const lb = document.getElementById('lightbox'), lbImg = lb.querySelector('img');
   let list = [], cur = -1;
