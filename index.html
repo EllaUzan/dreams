@@ -41,6 +41,12 @@
   @media (min-width:760px) { figure { margin-bottom:14px; } }
   figure img, figure video { width:100%; display:block; border-radius:2px; cursor:zoom-in; }
 
+  .next-ch { display:flex; justify-content:center; padding:40px 0 24px; }
+  .next-btn { display:flex; align-items:baseline; gap:12px; border:1px solid var(--ink); background:transparent; color:var(--ink); font-family:'Inter',sans-serif; font-weight:400; font-size:14px; letter-spacing:.05em; padding:15px 30px; border-radius:999px; cursor:pointer; transition:all .25s; }
+  .next-btn:hover { background:var(--ink); color:#fff; }
+  .next-btn .n-label { font-family:'Playfair Display',serif; font-style:italic; font-size:12px; color:var(--soft); }
+  .next-btn:hover .n-label { color:rgba(255,255,255,.6); }
+
   footer { text-align:center; padding:30px 20px 60px; font-size:10px; letter-spacing:.3em; text-transform:uppercase; color:var(--soft); border-top:1px solid var(--line); }
 
   #lightbox { position:fixed; inset:0; background:rgba(250,249,247,.98); display:none; align-items:center; justify-content:center; z-index:99; }
@@ -107,6 +113,7 @@
       <figure><video src="img/haze-vid1.mp4" muted loop autoplay playsinline></video></figure>
       <figure><img src="img/haze-28.jpg" loading="lazy" alt=""></figure>
     </div>
+    <div class="next-ch"><button class="next-btn" data-t="masq"><span class="n-label">Next chapter</span> II · Masquerade →</button></div>
   </section>
   <section class="chapter" id="masq">
     <div class="ch-head">
@@ -155,6 +162,7 @@
       <figure><img src="img/masq-37.jpg" loading="lazy" alt=""></figure>
       <figure><video src="img/masq-vid.mp4" muted loop autoplay playsinline></video></figure>
     </div>
+    <div class="next-ch"><button class="next-btn" data-t="beings"><span class="n-label">Next chapter</span> III · Soft Beings →</button></div>
   </section>
   <section class="chapter" id="beings">
     <div class="ch-head">
@@ -204,6 +212,7 @@
       <figure><img src="img/beings-38.jpg" loading="lazy" alt=""></figure>
       <figure><video src="img/beings-vid.mp4" muted loop autoplay playsinline></video></figure>
     </div>
+    <div class="next-ch"><button class="next-btn" data-t="air"><span class="n-label">Next chapter</span> IV · Still Air →</button></div>
   </section>
   <section class="chapter" id="air">
     <div class="ch-head">
@@ -247,6 +256,7 @@
       <figure><img src="img/air-31.jpg" loading="lazy" alt=""></figure>
       <figure><img src="img/air-32.jpg" loading="lazy" alt=""></figure>
     </div>
+    <div class="next-ch"><button class="next-btn" data-t="glow"><span class="n-label">Next chapter</span> V · Afterglow →</button></div>
   </section>
   <section class="chapter" id="glow">
     <div class="ch-head">
@@ -289,6 +299,7 @@
       <figure><img src="img/glow-31.jpg" loading="lazy" alt=""></figure>
       <figure><img src="img/glow-32.jpg" loading="lazy" alt=""></figure>
     </div>
+    <div class="next-ch"><button class="next-btn" data-t="haze"><span class="n-label">Back to the beginning</span> I · Sugar Haze →</button></div>
   </section>
 </main>
 
@@ -299,13 +310,13 @@
 <script>
   const chips = [...document.querySelectorAll('.chip')];
   const chapters = [...document.querySelectorAll('.chapter')];
-  chips.forEach(ch => ch.addEventListener('click', () => {
-    chips.forEach(c => c.classList.remove('active'));
-    chapters.forEach(s => s.classList.remove('active'));
-    ch.classList.add('active');
-    document.getElementById(ch.dataset.t).classList.add('active');
+  const activate = t => {
+    chips.forEach(c => c.classList.toggle('active', c.dataset.t === t));
+    chapters.forEach(s => s.classList.toggle('active', s.id === t));
     window.scrollTo({ top: 0, behavior: 'smooth' });
-  }));
+  };
+  document.querySelectorAll('.chip, .next-btn').forEach(b =>
+    b.addEventListener('click', () => activate(b.dataset.t)));
 
   const lb = document.getElementById('lightbox'), lbImg = lb.querySelector('img');
   let list = [], cur = -1;
