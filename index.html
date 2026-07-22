@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Dreams — a visual reference collection</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root { --ink:#1a1a1a; --soft:#8f8b85; --line:#e6e2db; --bg:#faf9f7; }
+  * { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+  html { scroll-behavior:smooth; }
+  body { background:var(--bg); color:var(--ink); font-family:'Inter',sans-serif; font-weight:300; }
+
+  header { text-align:center; padding:72px 24px 34px; }
+  header h1 { font-family:'Playfair Display',serif; font-weight:400; font-size:clamp(52px,12vw,110px); letter-spacing:.14em; line-height:1; }
+  header .sub { margin-top:16px; font-size:11px; letter-spacing:.32em; text-transform:uppercase; color:var(--soft); }
+
+  .nav-wrap { position:sticky; top:0; z-index:10; background:rgba(250,249,247,.92); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px); border-bottom:1px solid var(--line); }
+  nav { display:flex; gap:6px; overflow-x:auto; scrollbar-width:none; padding:14px 18px; max-width:1150px; margin:0 auto; }
+  nav::-webkit-scrollbar { display:none; }
+  .chip { flex:0 0 auto; border:1px solid var(--line); background:transparent; color:var(--ink); font-family:'Inter',sans-serif; font-weight:400; font-size:13px; letter-spacing:.04em; padding:9px 16px; border-radius:999px; cursor:pointer; transition:all .25s; display:flex; gap:8px; align-items:baseline; }
+  .chip .r { font-family:'Playfair Display',serif; font-style:italic; font-size:11px; color:var(--soft); }
+  .chip.active { background:var(--ink); color:#fff; border-color:var(--ink); }
+  .chip.active .r { color:rgba(255,255,255,.6); }
+
+  main { max-width:1150px; margin:0 auto; padding:0 18px 60px; }
+  .chapter { display:none; animation:fade .45s ease; }
+  .chapter.active { display:block; }
+  @keyframes fade { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:none; } }
+
+  .ch-head { padding:38px 4px 24px; }
+  .ch-roman { font-family:'Playfair Display',serif; font-style:italic; font-size:15px; color:var(--soft); }
+  .ch-head h2 { font-family:'Playfair Display',serif; font-weight:400; font-size:clamp(34px,7vw,54px); letter-spacing:.02em; margin:2px 0 8px; }
+  .ch-head p { font-size:14px; color:var(--soft); font-style:italic; font-family:'Playfair Display',serif; }
+  .ch-count { display:block; margin-top:10px; font-size:10px; letter-spacing:.28em; text-transform:uppercase; color:var(--soft); }
+
+  .grid { columns:2; column-gap:10px; }
+  @media (min-width:760px) { .grid { columns:3; column-gap:14px; } }
+  figure { break-inside:avoid; margin:0 0 10px; }
+  @media (min-width:760px) { figure { margin-bottom:14px; } }
+  figure img, figure video { width:100%; display:block; border-radius:2px; cursor:zoom-in; }
+
+  footer { text-align:center; padding:30px 20px 60px; font-size:10px; letter-spacing:.3em; text-transform:uppercase; color:var(--soft); border-top:1px solid var(--line); }
+
+  #lightbox { position:fixed; inset:0; background:rgba(250,249,247,.98); display:none; align-items:center; justify-content:center; z-index:99; }
+  #lightbox.open { display:flex; }
+  #lightbox img { max-width:96vw; max-height:92vh; box-shadow:0 18px 60px rgba(0,0,0,.15); }
+  #lb-close { position:absolute; top:calc(14px + env(safe-area-inset-top)); right:20px; font-size:26px; background:none; border:none; cursor:pointer; color:var(--ink); font-family:'Inter',sans-serif; font-weight:300; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>DREAMS</h1>
+  <div class="sub">a visual reference collection</div>
+</header>
+
+<div class="nav-wrap">
+  <nav>
+    <button class="chip active" data-t="haze"><span class="r">I</span>Sugar Haze</button>
+    <button class="chip" data-t="masq"><span class="r">II</span>Masquerade</button>
+    <button class="chip" data-t="beings"><span class="r">III</span>Soft Beings</button>
+    <button class="chip" data-t="air"><span class="r">IV</span>Still Air</button>
+    <button class="chip" data-t="glow"><span class="r">V</span>Afterglow</button>
+  </nav>
+</div>
+
+<main>
+
+  <section class="chapter active" id="haze">
+    <div class="ch-head">
+      <span class="ch-roman">I</span>
+      <h2>Sugar Haze</h2>
+      <p>pink air, candy light — a world dipped in pastel.</p>
+      <span class="ch-count">28 images</span>
+    </div>
+    <div class="grid">
+      <figure><img src="img/haze-01.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/haze-02.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/haze-03.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/haze-04.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/haze-05.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/haze-06.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/haze-07.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/haze-08.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/haze-09.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/haze-10.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/haze-11.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/haze-12.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/haze-13.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/haze-14.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/haze-15.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/haze-16.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/haze-17.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/haze-18.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/haze-19.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/haze-20.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/haze-21.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/haze-22.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/haze-23.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/haze-24.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/haze-25.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/haze-26.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/haze-27.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/haze-28.jpg" loading="lazy" alt=""></figure>
+    </div>
+  </section>
+  <section class="chapter" id="masq">
+    <div class="ch-head">
+      <span class="ch-roman">II</span>
+      <h2>Masquerade</h2>
+      <p>dots, masks and quiet clowns in peach and blue.</p>
+      <span class="ch-count">38 images</span>
+    </div>
+    <div class="grid">
+      <figure><img src="img/masq-01.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/masq-02.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/masq-03.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/masq-04.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/masq-05.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/masq-06.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/masq-07.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/masq-08.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/masq-09.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/masq-10.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/masq-11.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/masq-12.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/masq-13.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/masq-14.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/masq-15.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/masq-16.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/masq-17.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/masq-18.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/masq-19.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/masq-20.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/masq-21.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/masq-22.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/masq-23.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/masq-24.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/masq-25.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/masq-26.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/masq-27.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/masq-28.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/masq-29.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/masq-30.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/masq-31.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/masq-32.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/masq-33.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/masq-34.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/masq-35.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/masq-36.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/masq-37.jpg" loading="lazy" alt=""></figure>
+      <figure><video src="img/masq-vid.mp4" muted loop autoplay playsinline></video></figure>
+    </div>
+  </section>
+  <section class="chapter" id="beings">
+    <div class="ch-head">
+      <span class="ch-roman">III</span>
+      <h2>Soft Beings</h2>
+      <p>swans, sheep and creatures made of cream.</p>
+      <span class="ch-count">39 images</span>
+    </div>
+    <div class="grid">
+      <figure><img src="img/beings-01.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/beings-02.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/beings-03.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/beings-04.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/beings-05.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/beings-06.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/beings-07.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/beings-08.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/beings-09.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/beings-10.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/beings-11.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/beings-12.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/beings-13.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/beings-14.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/beings-15.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/beings-16.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/beings-17.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/beings-18.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/beings-19.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/beings-20.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/beings-21.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/beings-22.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/beings-23.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/beings-24.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/beings-25.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/beings-26.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/beings-27.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/beings-28.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/beings-29.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/beings-30.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/beings-31.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/beings-32.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/beings-33.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/beings-34.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/beings-35.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/beings-36.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/beings-37.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/beings-38.jpg" loading="lazy" alt=""></figure>
+      <figure><video src="img/beings-vid.mp4" muted loop autoplay playsinline></video></figure>
+    </div>
+  </section>
+  <section class="chapter" id="air">
+    <div class="ch-head">
+      <span class="ch-roman">IV</span>
+      <h2>Still Air</h2>
+      <p>empty architecture, mirrors — deserts holding their breath.</p>
+      <span class="ch-count">32 images</span>
+    </div>
+    <div class="grid">
+      <figure><img src="img/air-01.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/air-02.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/air-03.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/air-04.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/air-05.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/air-06.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/air-07.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/air-08.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/air-09.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/air-10.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/air-11.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/air-12.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/air-13.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/air-14.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/air-15.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/air-16.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/air-17.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/air-18.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/air-19.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/air-20.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/air-21.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/air-22.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/air-23.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/air-24.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/air-25.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/air-26.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/air-27.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/air-28.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/air-29.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/air-30.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/air-31.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/air-32.jpg" loading="lazy" alt=""></figure>
+    </div>
+  </section>
+  <section class="chapter" id="glow">
+    <div class="ch-head">
+      <span class="ch-roman">V</span>
+      <h2>Afterglow</h2>
+      <p>moons, moths and glitter after dark.</p>
+      <span class="ch-count">32 images</span>
+    </div>
+    <div class="grid">
+      <figure><img src="img/glow-01.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/glow-02.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/glow-03.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/glow-04.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/glow-05.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/glow-06.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/glow-07.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/glow-08.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/glow-09.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/glow-10.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/glow-11.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/glow-12.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/glow-13.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/glow-14.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/glow-15.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/glow-16.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/glow-17.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/glow-18.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/glow-19.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/glow-20.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/glow-21.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/glow-22.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/glow-23.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/glow-24.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/glow-25.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/glow-26.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/glow-27.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/glow-28.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/glow-29.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/glow-30.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/glow-31.jpg" loading="lazy" alt=""></figure>
+      <figure><img src="img/glow-32.jpg" loading="lazy" alt=""></figure>
+    </div>
+  </section>
+</main>
+
+<footer>Dreams · Reference Collection · 2026</footer>
+
+<div id="lightbox"><button id="lb-close">&times;</button><img src="" alt=""></div>
+
+<script>
+  const chips = [...document.querySelectorAll('.chip')];
+  const chapters = [...document.querySelectorAll('.chapter')];
+  chips.forEach(ch => ch.addEventListener('click', () => {
+    chips.forEach(c => c.classList.remove('active'));
+    chapters.forEach(s => s.classList.remove('active'));
+    ch.classList.add('active');
+    document.getElementById(ch.dataset.t).classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }));
+
+  const lb = document.getElementById('lightbox'), lbImg = lb.querySelector('img');
+  let list = [], cur = -1;
+  document.querySelectorAll('.grid').forEach(grid => {
+    const imgs = [...grid.querySelectorAll('img')];
+    imgs.forEach((im, i) => im.addEventListener('click', () => {
+      list = imgs; cur = i; lbImg.src = im.src; lb.classList.add('open');
+    }));
+  });
+  const show = d => { cur = (cur + d + list.length) % list.length; lbImg.src = list[cur].src; };
+  lb.addEventListener('click', e => { if (e.target !== lbImg) lb.classList.remove('open'); });
+  document.getElementById('lb-close').addEventListener('click', () => lb.classList.remove('open'));
+  document.addEventListener('keydown', e => {
+    if (!lb.classList.contains('open')) return;
+    if (e.key === 'Escape') lb.classList.remove('open');
+    if (e.key === 'ArrowRight') show(1);
+    if (e.key === 'ArrowLeft') show(-1);
+  });
+  let tx = null;
+  lb.addEventListener('touchstart', e => tx = e.changedTouches[0].clientX, {passive:true});
+  lb.addEventListener('touchend', e => {
+    if (tx === null) return;
+    const dx = e.changedTouches[0].clientX - tx; tx = null;
+    if (Math.abs(dx) > 40) show(dx < 0 ? 1 : -1);
+  }, {passive:true});
+</script>
+</body>
+</html>
